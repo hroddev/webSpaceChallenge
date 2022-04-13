@@ -256,17 +256,23 @@ select {
     margin-right: .5em;
 }
 
-.underline-inidicators > * {
+.underline-indicators > * {
     padding: var(--underline-gap, 1rem) 0;
+    border: 0;
+    cursor: pointer;
     border-bottom: .2rem solid hsl( var(--clr-white) / 0);
 
 }
 
-.underline-inidicators > li:hover,
-.underline-inidicators > li:focus {
+.underline-indicators > a:hover,
+.underline-indicators > a:focus {
     border-color: hsl( var(--clr-white) / .5);
 }
 
-.underline-inidicators > .active {
+.underline-indicators > .active {
     border-color: hsl( var(--clr-white) / 1);
+}
+
+.tab-list {
+    --gap: 2rem;
 }
