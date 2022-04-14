@@ -257,22 +257,46 @@ select {
 }
 
 .underline-indicators > * {
+    cursor: pointer;
     padding: var(--underline-gap, 1rem) 0;
     border: 0;
-    cursor: pointer;
     border-bottom: .2rem solid hsl( var(--clr-white) / 0);
-
 }
 
-.underline-indicators > a:hover,
-.underline-indicators > a:focus {
+.underline-indicators button:hover,
+.underline-indicators button:focus {
     border-color: hsl( var(--clr-white) / .5);
 }
 
-.underline-indicators > .active {
+.underline-indicators li:hover,
+.underline-indicators li:focus {
+    border-color: hsl( var(--clr-white) / .5);
+}
+.underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+    color: hsl( var(--clr-white) / 1);
     border-color: hsl( var(--clr-white) / 1);
 }
 
 .tab-list {
     --gap: 2rem;
+}
+
+.dot-indicators > * {
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    padding: .5em;
+    background-color: hsl( var(--clr-white) / .25 );
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+    background-color: hsl( var(--clr-white) / .5 );
+}
+
+.dot-indicators > .active,
+.dot-indicators > [aria-selected="true"] {
+    background-color: hsl( var(--clr-white / 1);
 }
