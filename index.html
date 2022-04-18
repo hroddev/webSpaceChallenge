@@ -13,6 +13,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 
   <title>Frontend Mentor | Space tourism website</title>
+
+  <script src="index.js" defer></script>
 </head>
 <body class="home">
 
@@ -20,21 +22,22 @@
     <div>
       <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo">
     </div>
-
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
     <nav >
-      <ul class="primary-navigation underline-indicators flex">
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
           <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span>00</span>Home</a>
           <li> <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="destination.html"><span>01</span>Destination</a>
           <li> <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="technology.html"><span>02</span>Crew</a>
           <li> <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="technology.html"><span>03</span>Technology</a>
       </ul>
     </nav>
+
   </header>
 
-  <div class="grid-container">
+  <div class="grid-container grid-container--home">
     <div>
     <h1 class="text-accent uppercase fs-500 ff-sans-cond letter-spacing-1">So, you want to travel to
-    <spam class="fs-900 ff-serif text-white">Space</spam></h1>
+    <spam class="d-block fs-900 ff-serif text-white">Space</spam></h1>
     <p>Let’s face it; if you want to go to space, you might as well genuinely go to 
     outer space and not hover kind of on the edge of it. Well sit back, and relax 
     because we’ll give you a truly out of this world experience!</p>
