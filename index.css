@@ -26,10 +26,10 @@
 
 @media (min-width: 35em) {
     :root {
-        --fs-800: 5rem;
+        --fs-800: 4rem;
         --fs-700: 2.5rem;
-        --fs-600: 1.5rem;
-        --fs-500: 1.25rem;
+        --fs-600: 1.25rem;
+        --fs-500: 1.5rem;
         --fs-400: 1rem;
     }
 }
@@ -152,9 +152,12 @@ select {
     display:block;
 }
 
-/* .flow > *:not(:first-child)  */
-.flow > * + *  {
+ .flow > *:where(:not(:first-child))  {
     margin-top: var(--flow-space, 1rem);
+}
+
+.flow--space-small{
+    --flow-space: .75rem
 }
 
 .container {
@@ -301,7 +304,7 @@ select {
 }
 
 .primary-navigation {
-    --gap: clamp(1.5rem, 7vw, 3.5rem);
+    --gap: clamp(1.5rem, 4vw, 3.5rem);
     --underline-gap: 2rem;
     list-style: none;
     padding: 0;
@@ -409,9 +412,10 @@ select {
 
 .underline-indicators > * {
     cursor: pointer;
-    padding: var(--underline-gap, 1rem) 0;
+    padding: var(--underline-gap, .5rem) 0;
     border: 0;
     border-bottom: .2rem solid hsl( var(--clr-white) / 0);
+    background-color: transparent;
 }
 
 .underline-indicators button:hover,
@@ -482,13 +486,30 @@ body {
     }
 }
 
+/* destination */
+
+.destination {
+    background-image: url(./assets/destination/background-destination-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+    .destination {
+        background-position: center center;
+        background-image: url(./assets/destination/background-destination-tablet.jpg);
+    }
+}
+
+@media (min-width: 45em) {
+    .destination {
+        background-image: url(./assets/destination/background-destination-desktop.jpg);
+    }
+}
 /* _________________________________________________*/
 /*             Layouts                              */
 /* _________________________________________________*/
 
 .grid-container {
     text-align: center;
-    /* border: 5px solid red; */
     display: grid;
     place-items: center;
     padding-inline: 1rem;
@@ -497,7 +518,7 @@ body {
 
 .grid-container p:not([class]) {
     max-width: 50ch;
-    /* outline: 1px solid limegreen; */
+
 }
 
 .numbered-title {
@@ -515,7 +536,7 @@ body {
         'content';
 }
 
-.grid-container--destination > img {
+.grid-container--destination > picture {
     grid-area: image;
     max-width: 60%;
 }
@@ -550,7 +571,7 @@ body {
         'content';
 }
 
-.grid-container--crew > img {
+.grid-container--crew > picture {
     grid-area: image;
     max-width: 60%;
     border-bottom: 1px solid hsl( var(--clr-white) / .1);
@@ -562,16 +583,10 @@ body {
 
 .grid-container--crew > .crew-details {
     grid-area: content;
+}
 
-@media (min-width: 35em) {
-    .numbered-title {
-        justify-self: start;
-        margin-top: 2rem;
-    }
-    .destination-meta {
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
+.crew-details h2 {
+    opacity: .5;
 }
 
 @media (min-width: 35em) {
@@ -579,12 +594,14 @@ body {
         justify-self: start;
         margin-top: 2rem;
     }
+
     .destination-meta {
         flex-direction: row;
         justify-content: space-evenly;
     }
+
     .grid-container--crew {
-        --flow-space: 2rem;
+        padding-bottom: 0;
         grid-template-areas:
             'title'
             'content'
@@ -600,20 +617,20 @@ body {
         grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 34rem))  minmax(2rem, 1fr);
         /* grid-template-columns: 2em minmax(0, 40rem) minmax(0, 40rem) 2em; */
     }
+
+    .grid-container--home {
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
+    }
+
     .grid-container--home > *:first-child {
         grid-column: 2;
-      /*   outline: 1px solid red; */
     }
 
     .grid-container--home > *:last-child {
         grid-column: 3;
-      /*   outline: 1px solid yellow; */
     }
 
-    .grid-container--home {
-        padding-bottom: max(6rem, 20vh);
-        align-items: center;
-    }
     .grid-container--destination {
         justify-items: start;
         align-content: start;
@@ -622,13 +639,17 @@ body {
             '. image tabs .'
             '. image content .';
     }
-    .grid-container--destination > img {
+
+    .grid-container--destination > picture,
+    .grid-container--crew > picture {
         max-width: 90%;
     }
+
     .destination-meta {
         --gap: min(6vw, 6rem);
         justify-content: start;
     }
+
     .grid-container--crew {
         justify-items: start;
         align-content: start;
@@ -637,8 +658,12 @@ body {
             '. content image .'
             '. tabs image .';
     }
-    
-    .grid-container--crew > img {
-        max-width: 40%;
+    .grid-container--crew > .dot-indicators {
+        justify-self: start;
     }
+
+    .grid-container--crew > picture {
+        align-self: end;
+    }
+
 }
