@@ -157,7 +157,7 @@ select {
 }
 
 .flow--space-small{
-    --flow-space: .75rem
+    --flow-space: .75rem;
 }
 
 .container {
@@ -589,6 +589,7 @@ body {
     opacity: .5;
 }
 
+
 @media (min-width: 35em) {
     .numbered-title {
         justify-self: start;
@@ -665,5 +666,13 @@ body {
     .grid-container--crew > picture {
         align-self: end;
     }
-
 }
+
+/* .grid-container--crew > .crew-details h2 {
+    font-size: --fs-400;
+}
+
+.grid-container--crew > .crew-details header p {
+    font-size: 2rem;
+    outline: 1px solid red;
+} */
