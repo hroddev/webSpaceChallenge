@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![screenshot](./assets/shared/project_3.png)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
@@ -43,8 +43,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/hroddev/webSpaceChallenge)
-- Live Site URL: [Add live site URL here](https://hroddev.github.io/webSpaceChallenge/)
+- Solution URL: [https://github.com/hroddev/webSpaceChallenge](https://github.com/hroddev/webSpaceChallenge)
+- Live Site URL: [https://hroddev.github.io/webSpaceChallenge/](https://hroddev.github.io/webSpaceChallenge/)
 
 ## My process
 
